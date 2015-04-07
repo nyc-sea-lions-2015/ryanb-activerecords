@@ -22,17 +22,17 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
 
     render plain: params[:record].inspect
-        # if @record.update(record_params)
-    #    redirect_to @record
-    #  else
-    #    render 'edit'
-    #  end
+     #    if @record.update(record_params)
+     #   redirect_to @record
+     # else
+     #   render 'edit'
+     # end
   end
 
 
   def create
     # render plain: params[:record].inspect
-    @record = Record.new(params[:record])
+    @record = Record.new(record_params)
 
     if @record.save
       redirect_to @record
