@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <title>Activerecord</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body>
+  <header>
+    <span id='title'>activeRecords</span>
+      <nav>
+         <ul>
+          <% if current_user %>
+              <li>Welcome, <%= current_user.username %></li> | 
+              <li><%= link_to 'add record', new_record_path %></li> | 
+              <li><%= link_to 'browse collections', records_path %></li> | 
+              <li><%= link_to 'logout', session_path(session),
+              method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_session_path %></li> | 
+              <li><%= link_to 'Register', new_user_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+  </header>
+
+  <div id='container'>
+    <%= yield %>
+  </div>
+
+</body>
+</html>

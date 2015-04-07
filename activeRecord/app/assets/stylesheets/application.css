@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ body{
+   font-family: 'Source Code Pro', sans-serif;
+   margin: 0px auto;
+   background-image: url("record_player.jpg");
+ }
+
+
+ header{
+   background-color: #000000;
+   position: fixed;
+   color: #FFFFFF;
+   height: 55px;
+   width: 100%;
+   margin-top: 0px;
+   z-index: 5;
+ }
+
+ nav{
+   float: right;
+   padding-right: 25px;
+ }
+
+ nav ul li{
+   display: inline;
+ }
+
+ li a{
+   color: #ffffff;
+   text-decoration: none;
+ }
+
+ li a:hover{
+   color: #ff6600;
+ }
+
+ #title{
+   padding-left: 30px;
+   color: #66CC99;
+   display: inline;
+   font-size: 2.5em;
+ }
+
+ #container{
+   border:1px solid #000000;
+   background-color: #FFFFFF;
+   padding:75px;
+   width: 75%;
+   margin: auto;
+   color:#000000;
+ }
+
+ #container a{
+   color: #000000;
+   text-decoration: none;
+ }
+
+ #container a:hover{
+   color: #ff6600;
+ }
+
+ /*.welcome{
+   margin:auto;
+   font-size: 8em;
+   color:#FFFFFF;
+ }*/
+
