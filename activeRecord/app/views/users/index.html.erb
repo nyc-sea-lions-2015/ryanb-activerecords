@@ -1,0 +1,11 @@
+<div class="my-collections">
+  <h2>My Collection</h2>
+    <% current_user.records.each do |record| %>
+      <p>
+        <%= link_to record.artist, record_path(record) %> by <i><%= record.album_title %></i>
+      </p>
+    <% end %>
+
+   <%= button_to 'add record', new_record_path,:class => "button", :method => :get  %>
+
+</div>
