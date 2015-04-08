@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     cur_user = User.find_by_username(params[:session][:username])
     if cur_user && cur_user.authenticate(params[:session][:password])
       session[:user_id] = cur_user.id
-      redirect_to '/records'
+      redirect_to '/users'
     else
       redirect_to '/'
     end

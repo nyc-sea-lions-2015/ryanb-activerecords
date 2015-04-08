@@ -1,0 +1,25 @@
+<% if current_user %>
+  <button>
+    <a href="#">Add a comment</a>
+  </button>
+ <% end %> 
+
+
+<% @comments.each do |comment| %>
+<p>
+  <%= comment.user.username %> says...<br>
+  <%= comment.body %>
+  <br>
+  <% if current_user.id == comment.user.id %>
+     <button>
+       <a href="#">Edit comment</a>
+     </button>
+
+     <button>
+       <a href="#">Delete comment</a>
+     </button>
+
+  <% end %>
+  <br>
+</p> 
+<% end %>

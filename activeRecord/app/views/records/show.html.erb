@@ -9,6 +9,18 @@
   <p>Album Artist: <%= @record.artist %></p> 
   <p>Album Genre: <%= @record.genre %></p> 
   <p>Released: <%= @record.release_year %></p>
+  <p><i><%= @record.user.username %>'s opinion:<br></i> <%= @record.owner_opinion %></p>
 
+</div>
 
+<% if current_user.id == @record.user.id %>
+   <%= button_to 'Edit this record', edit_record_path(@record), :class => "button", :method => :get  %>
+<% end %>
+
+<hr>
+
+<div class='records/record-comments'>
+  <h2>Comments</h2>
+
+<%= render "record_comments" %>
 </div>

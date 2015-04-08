@@ -8,6 +8,7 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id])
+    @comments = @record.comments
   end
 
   def new
@@ -21,17 +22,15 @@ class RecordsController < ApplicationController
   def update
     @record = Record.find(params[:id])
 
-    render plain: params[:record].inspect
-     #    if @record.update(record_params)
-     #   redirect_to @record
-     # else
-     #   render 'edit'
-     # end
+    if @record.update(record_params)
+       redirect_to @record
+     else
+       render 'edit'
+     end
   end
 
 
   def create
-    # render plain: params[:record].inspect
     @record = Record.new(record_params)
 
     if @record.save
@@ -44,6 +43,7 @@ class RecordsController < ApplicationController
 
   def delete
 
+
   end
 
 
@@ -54,7 +54,8 @@ private
                                    :artist, 
                                    :genre, 
                                    :release_year,
-                                   :owner_opinion)
+                                   :owner_opinion,
+                                   :user_id)
   end
 
 
