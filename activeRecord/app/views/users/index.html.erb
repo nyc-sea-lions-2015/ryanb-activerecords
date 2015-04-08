@@ -2,7 +2,7 @@
   <h2>My Collection</h2>
     <% current_user.records.each do |record| %>
       <p>
-        <%= link_to record.artist, record_path(record) %> by <i><%= record.album_title %></i>
+        <%= link_to record.album_title, record_path(record) %> by <i><%= record.artist %></i>
       </p>
     <% end %>
 

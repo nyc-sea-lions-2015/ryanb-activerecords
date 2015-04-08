@@ -1,7 +1,6 @@
 <% if current_user %>
-  <button>
-    <a href="#">Add a comment</a>
-  </button>
+  <%= button_to 'Add a comment', new_record_comment_path(@record, @comment), :class => "button", :method => :get  %>
+
  <% end %> 
 
 

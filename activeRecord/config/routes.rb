@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root :to => 'sessions#new'
   
   resources :users
-  resources :records
-  resources :comments 
+
+  resources :records do
+    resources :comments
+  end
+
   resources :tracks
   resources :sessions
   
